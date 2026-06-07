@@ -22,7 +22,7 @@ public class ClientReceiver implements Runnable {
             if (msg == null) {
                 SwingUtilities.invokeLater(() -> {
                     chatFrame.appendSystemMessage("与服务器的连接已断开");
-                    chatFrame.closeWindow();
+                    new javax.swing.Timer(2000, e -> chatFrame.closeWindow()).start();
                 });
                 break;
             }

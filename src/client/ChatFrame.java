@@ -119,7 +119,7 @@ public class ChatFrame extends JFrame {
             if ("quit".equals(command)) {
                 client.sendCommand("quit");
                 appendSystemMessage("正在退出聊天室...");
-                closeWindow();
+                new javax.swing.Timer(2000, e -> closeWindow()).start();
                 return;
             }
             client.sendCommand(command);
@@ -187,7 +187,7 @@ public class ChatFrame extends JFrame {
             isAnonymous = false;
             updateUserInfoLabel();
         } else if (content.contains("bye")) {
-            closeWindow();
+            new javax.swing.Timer(2000, e -> closeWindow()).start();
         }
     }
 
