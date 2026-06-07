@@ -79,6 +79,7 @@ public class ClientHandler implements Runnable {
         String pass = msg.getContent();
 
         if (user == null || user.isEmpty() || pass == null || pass.isEmpty()) {
+            server.getLogManager().logLoginFail(user != null ? user : "<null>", clientIp);
             sendMessage(new Message(MessageType.LOGIN_FAIL, "SERVER", null, "username and password required"));
             return;
         }
@@ -90,6 +91,7 @@ public class ClientHandler implements Runnable {
         }
 
         if (!server.getUserManager().addOnlineUser(user, this)) {
+            server.getLogManager().logLoginFail(user, clientIp);
             sendMessage(new Message(MessageType.LOGIN_FAIL, "SERVER", null, "user already online"));
             return;
         }
