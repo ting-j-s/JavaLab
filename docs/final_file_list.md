@@ -25,13 +25,16 @@
 ├── logs/                       # 日志目录（自动创建）
 │   └── chat_yyyy-MM-dd.log    # 每日滚动日志
 ├── docs/
-│   ├── gui_acceptance_test.md  # GUI 手动验收文档
+│   ├── design_doc.md           # 设计文档（含设计思路、类关系、使用说明）
 │   └── final_file_list.md      # 本文件
-├── TestMessage.java            # Message 编解码单元测试
-├── TestServerCore.java         # 服务端核心逻辑测试
-├── TestServerIntegration.java  # 服务端集成测试（27 项）
-├── TestServerManual.md         # 服务端手动测试说明
-├── ClientManualTest.md         # 客户端手动测试说明
+├── test/
+│   ├── TestMessage.java        # Message 编解码单元测试
+│   ├── TestServerCore.java     # 服务端核心逻辑测试
+│   ├── TestServerIntegration.java  # 服务端集成测试（27 项）
+│   ├── TestServerManual.md     # 服务端手动测试说明
+│   ├── ClientManualTest.md     # 客户端手动测试说明
+│   ├── gui_acceptance_test.md  # GUI 手动验收文档
+│   └── manual_acceptance.md    # 完整手动验收流程（30 项）
 └── out/                        # 编译输出目录
 ```
 
@@ -158,10 +161,10 @@ admin admin123
 
 ## 6. docs 目录
 
-- [gui_acceptance_test.md](docs/gui_acceptance_test.md): GUI 手动验收测试文档
+- [design_doc.md](docs/design_doc.md): 设计文档（含设计思路、类关系、使用说明）
 - [final_file_list.md](docs/final_file_list.md): 本文件清单
 
-## 7. 测试类
+## 7. test 目录
 
 | 文件 | 类型 | 测试项数 | 说明 |
 |------|------|---------|------|
@@ -170,3 +173,5 @@ admin admin123
 | TestServerIntegration.java | 集成测试 | 27 | 全流程：登录/群聊/私聊/匿名/命令/USER_JOIN/USER_LEAVE |
 | TestServerManual.md | 手册 | — | 使用 nc 手动测试服务器 |
 | ClientManualTest.md | 手册 | — | 客户端手动测试说明 |
+| gui_acceptance_test.md | 手册 | 28 项 | GUI 手动验收测试 |
+| manual_acceptance.md | 手册 | 30 项 | 完整手动验收流程 |
